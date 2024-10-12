@@ -1,0 +1,20 @@
+# Use the official Node.js image as the base image
+FROM node:16.20.2-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package.json package-lock.json ./
+
+# Install Node.js dependencies
+RUN npm install
+
+# Command to allow write / read permission on copied node_modules/.cache directory
+RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
+
+# Copy the entire local project directory to the working directory
+COPY . .
+
+# Command to run the application in development mode
+CMD ["npm", "run", "start"]

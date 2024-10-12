@@ -1,0 +1,17 @@
+@import "../../base/pages/authentication.scss";
+
+.auth-wrapper .auth-footer-btn .btn {
+  padding: 0.555rem 0.6rem !important;
+}
+
+.auth-wrapper.auth-cover {
+  .brand-logo {
+    position: relative !important;
+    left: 0px !important;
+    width: fit-content;
+    margin: auto;
+    img {
+      width: 215px;
+    }
+  }
+}
